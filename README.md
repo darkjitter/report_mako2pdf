@@ -1,7 +1,7 @@
 report_mako2pdf
 ===============
 
-OpenERP 6.1 addon that convert Mako -> HTML -> PDF reports. It is based on report_webkit addon.
+OpenERP 6.1 module that converts Mako -> HTML -> PDF reports. It is based on report_webkit module.
 
 Author
 ------
@@ -13,13 +13,13 @@ Requirements
 
 Install
 -------
-	- Copy a valid addons_path. Follow the installation process of a addon in OpenERP.
+	- Copy it in a valid addons_path. Follow the installation process of modules in OpenERP.
 
 Features
 --------
-	- The needed dependencies are within addon.
+	- The needed dependencies are within modules.
 
-	- After installing the addon you can use a new type of report called mako2pdf. Ex:
+	- After installing the module you can use a new type of report called mako2pdf. Ex:
 
 		<report
 			auto="False"
@@ -31,14 +31,14 @@ Features
 			report_type="mako2pdf"
 		/>
 
-	- In the customs parsers you can specify extra options that change the behavior. Ex:
+	- In custom parsers you can specify extra options that change the behavior. Ex:
 
 		class mako_parser_ex(report_sxw.rml_parse):
 			def __init__(self, cr, uid, name, context=None):
 				super(mako_parser_ex, self).__init__(cr, uid, name, context=context)
 				self.localcontext.update({
 					'mako2pdf': {
-						'encoding': "ISO-8859-1", #By default this is UTF-8
+						'encoding': "ISO-8859-1", # UTF-8 by default
 						'default_css': "a{}",
 						....
 						[OPTIONS]
